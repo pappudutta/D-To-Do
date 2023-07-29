@@ -52,7 +52,11 @@ const Todos = ({ todos, setTodos }) => {
                   className="mx-2"
                   onChange={e => handleToggle(todo.id, e.target.checked)}
                 />
-                {todo.completed ? <del>{todo.newItem}</del> : todo.newItem}
+                {todo.completed ? (
+                  <del className="text-danger">{todo.newItem}</del>
+                ) : (
+                  todo.newItem
+                )}
               </label>
 
               <span key={todo.id} onClick={() => handleDelete(todo.id)}>
